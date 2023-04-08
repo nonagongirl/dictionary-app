@@ -1,3 +1,33 @@
-.dictionary {
-  padding: 30px;
+.dictionary section {
+  background: #ffeddf;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 20px auto;
+  max-width: 75%;
+}
+
+.dictionary input {
+  margin: auto;
+  width: 70%;
+  padding: 6px;
+  border-radius: 5px;
+  border-color: darkgrey;
+}
+
+.dictionary .hint {
+  font-size: 10px;
+  opacity: 60%;
+}
+
+.dictionary .prompt {
+  font-size: 14px;
+  opacity: 80%;
+  padding: 4px;
+}
+
+.dictionary .dvdpic {
+  max-width: 60%;
+  max-height: 250px;
+  border-radius: 10px;
+  padding: 4px;
 }

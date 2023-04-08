@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+
 import Results from "./Results.js";
 import "./Dictionary.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Dictionary() {
   let [keyword, setKeyword] = useState("");
@@ -23,9 +25,28 @@ export default function Dictionary() {
 
   return (
     <div className="dictionary">
-      <form onSubmit={search}>
-        <input type="search" onChange={handleKeywordChange} />
-      </form>
+      <section>
+        <div className="container">
+          <div className="row align-items-center justify-content-center">
+            <div className="col-sm-6">
+              <img
+                className="dvdpic m-2"
+                src="./media/dvd.jpg"
+                alt="dick van dyke looking up a word"
+              />{" "}
+            </div>
+
+            <div className="col-sm-6">
+              <div className="prompt">What would you like me to look up?</div>
+              <form onSubmit={search}>
+                <input type="search" onChange={handleKeywordChange} />
+              </form>
+              <div className="hint">Suggested words: cow, nugget, tone...</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Results results={results} />
     </div>
   );

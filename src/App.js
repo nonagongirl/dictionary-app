@@ -1,12 +1,13 @@
+import React from "react";
+import axios from "axios";
 import "./App.css";
-import Dictionary from "./Dictionary";
+import Dictionary from "./Dictionary.js";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Dictionary</h1>
-        <img src="./media/search.gif" alt="magnifying glass" />
+        <h1>Dick-Van-Dyke-tionary</h1>
       </header>
       <main>
         <Dictionary />
