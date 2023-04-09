@@ -1,0 +1,16 @@
+.Synonyms {
+  margin: 0;
+  padding: 0;
+}
+
+.Synonyms li {
+  display: inline-block;
+  padding-inline: 7px;
+  padding-block: 3px;
+  line-height: 1;
+}
+
+.Synonyms li:hover {
+  background-color: rgba(214, 214, 214, 0.349);
+  border-radius: 20px;
+}
