@@ -13,7 +13,11 @@ function App() {
         <Dictionary />
       </main>
       <footer className="footer">
-        <a href="https://github.com/nonagongirl/dictionary-app">
+        <a
+          href="https://github.com/nonagongirl/dictionary-app"
+          rel="noreferrer"
+          target="blank"
+        >
           Open-source code
         </a>{" "}
         by Stef Braithwaite
