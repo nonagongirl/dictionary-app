@@ -2,18 +2,24 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import Results from "./Results.js";
+import Photos from "./Photos.js";
 import "./Dictionary.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import dvd from "./media/dvd.jpg";
 
 export default function Dictionary(props) {
   let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
   let [loaded, setLoaded] = useState(false);
+  let [photos, setPhotos] = useState(null);
 
   function handleResponse(response) {
     setResults(response.data);
   }
 
+  function handlePexelsResponse(response) {
+    setPhotos(response.data.photos);
+  }
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -27,6 +33,12 @@ export default function Dictionary(props) {
   function search() {
     let api = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=cbbfb900d7a3c5f058f2a44a54t3o340`;
     axios.get(api).then(handleResponse);
+
+    let numberOfPics = "6";
+    let pexelsApi = `VnvDmIDC2RPC6PEiATMR2i6s7nOO5dVFwYYVhFHbOiul8D5FjCkgfyIw`;
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=${numberOfPics}`;
+    let headers = { Authorization: `${pexelsApi}` };
+    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
   }
 
   function handleKeywordChange(event) {
@@ -36,18 +48,18 @@ export default function Dictionary(props) {
   if (loaded) {
     return (
       <div className="dictionary">
-        <section>
+        <section className="searchSection">
           <div className="container">
-            <div className="row align-items-center justify-content-center">
-              <div className="col-sm-6">
+            <div className=" row align-items-center justify-content-center">
+              <div className="col-sm-4">
                 <img
                   className="dvdpic m-2"
-                  src="./media/dvd.jpg"
+                  src={dvd}
                   alt="dick van dyke looking up a word"
                 />{" "}
               </div>
 
-              <div className="col-sm-6">
+              <div className="col-sm-8">
                 <div className="prompt">What would you like me to look up?</div>
                 <form onSubmit={handleSubmit}>
                   <input
@@ -64,7 +76,8 @@ export default function Dictionary(props) {
           </div>
         </section>
 
-        <Results results={results} />
+        <Results results={results} photos={photos} />
+        {/* <Photos photos={photos} /> */}
       </div>
     );
   } else {

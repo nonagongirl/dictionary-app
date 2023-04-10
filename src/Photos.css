@@ -1,0 +1,11 @@
+.Photos img {
+  margin: 0 auto;
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.Results .photoSection {
+  margin: 0 auto;
+  border-radius: 8px;
+  padding: 2px;
+}

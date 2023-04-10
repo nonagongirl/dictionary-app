@@ -1,12 +1,9 @@
-.dictionary {
-  background-color: black;
-}
 .dictionary section {
   background: #ffffff;
   border-radius: 5px;
   padding: 5px;
   margin: 20px auto;
-  max-width: 60%;
+  max-width: 70%;
 
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
@@ -14,9 +11,13 @@
   font-size: smaller;
 }
 
+.dictionary .searchSection {
+  max-width: 55%;
+}
+
 .dictionary input {
   margin: auto;
-  width: 70%;
+  width: 90%;
   padding: 6px;
   border-radius: 5px;
   border-color: darkgrey;
@@ -34,8 +35,41 @@
 }
 
 .dictionary .dvdpic {
-  max-width: 60%;
-  max-height: 250px;
+  max-width: 100%;
+  max-height: 80%;
   border-radius: 10px;
   padding: 4px;
+}
+
+@media (max-width: 550px) {
+  .dictionary .searchSection {
+    max-width: 70%;
+  }
+
+  .dictionary .dvdpic {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 10px;
+    padding: 4px;
+    margin: 0 auto;
+  }
+
+  .App-header {
+    padding: 10px;
+    margin: 10px auto;
+    max-width: 80%;
+  }
+
+  .dictionary section {
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 15px auto;
+    max-width: 80%;
+
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    font-size: smaller;
+  }
 }
