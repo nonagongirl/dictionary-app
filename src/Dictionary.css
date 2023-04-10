@@ -23,11 +23,13 @@
 }
 
 .dictionary .hint {
+  color: black;
   font-size: 10px;
   opacity: 60%;
 }
 
 .dictionary .prompt {
+  color: black;
   font-size: 14px;
   opacity: 80%;
   padding: 4px;
