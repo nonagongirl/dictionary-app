@@ -4,6 +4,7 @@ import axios from "axios";
 import Results from "./Results.js";
 
 import "./Dictionary.css";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import dvd from "./media/dvd.jpg";
 
