@@ -13,12 +13,19 @@ export default function Dictionary(props) {
   let [results, setResults] = useState(null);
   let [loaded, setLoaded] = useState(false);
   let [photos, setPhotos] = useState(null);
+  let [phonetics, setPhonetics] = useState(null);
 
   function handleResponse(response) {
     setResults(response.data);
   }
 
+  function handlePhoneticsResponse(response) {
+    console.log(response.data);
+    setPhonetics(response.data);
+  }
+
   function handlePexelsResponse(response) {
+    console.log(response.data.photos);
     setPhotos(response.data.photos);
   }
   function handleSubmit(event) {
@@ -34,6 +41,9 @@ export default function Dictionary(props) {
   function search() {
     let api = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=cbbfb900d7a3c5f058f2a44a54t3o340`;
     axios.get(api).then(handleResponse);
+
+    let phoneticsApi = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+    axios.get(phoneticsApi).then(handlePhoneticsResponse);
 
     let numberOfPics = "6";
     let pexelsApi = `VnvDmIDC2RPC6PEiATMR2i6s7nOO5dVFwYYVhFHbOiul8D5FjCkgfyIw`;
@@ -77,8 +87,7 @@ export default function Dictionary(props) {
           </div>
         </section>
 
-        <Results results={results} photos={photos} />
-        {/* <Photos photos={photos} /> */}
+        <Results results={results} photos={photos} phonetics={phonetics} />
       </div>
     );
   } else {
