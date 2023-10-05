@@ -15,9 +15,8 @@ body {
 
 .footer {
   font-size: 10px;
-  opacity: 0.8;
+  opacity: 80%;
   margin-top: 10px;
-  margin-bottom: 10px;
   color: rgb(255, 255, 255);
 }
 
