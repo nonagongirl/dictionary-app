@@ -29,7 +29,7 @@ export default function Meaning(props) {
   } else {
     return (
       <div className="Meaning">
-        <h4 class="text-capitalize">{props.meanings.partOfSpeech}</h4>
+        <h4 className="text-capitalize">{props.meanings.partOfSpeech}</h4>
         <div className="row align-items-start justify-content-center">
           <div className="col-sm-4">
             <p>

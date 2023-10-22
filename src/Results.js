@@ -1,24 +1,24 @@
 import React from "react";
-// import Phonetics from "./Phonetics";
+import Phonetics from "./Phonetics";
 import Meaning from "./Meaning";
 import Photos from "./Photos";
 
-//getting audio api to work in nested arrays is difficuly. may need help
+//getting audio api to work in nested arrays is difficult. may need help
 
 export default function Results(props) {
   if (props.results) {
     return (
       <div className="Results">
-        {/* <section>
+        <section>
           <h2 class="text-capitalize">{props.results.word}</h2>
-          {props.phonetics.data.map(function(phonetics, index) {
+          {props.phonetics.map(function(phonetics, index) {
             return (
-              // <section key={index}>
-              //   <Phonetics phonetics={phonetics} />
-              // </section>
+              <div key={index}>
+                <Phonetics phonetics={phonetics} />
+              </div>
             );
           })}
-        </section> */}
+        </section>
 
         <Photos photos={props.photos} />
 

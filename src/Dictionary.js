@@ -20,12 +20,10 @@ export default function Dictionary(props) {
   }
 
   function handlePhoneticsResponse(response) {
-    console.log(response.data);
     setPhonetics(response.data);
   }
 
   function handlePexelsResponse(response) {
-    console.log(response.data.photos);
     setPhotos(response.data.photos);
   }
   function handleSubmit(event) {
