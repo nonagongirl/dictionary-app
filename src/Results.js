@@ -1,5 +1,5 @@
 import React from "react";
-import Phonetics from "./Phonetics";
+// import Phonetics from "./Phonetics";
 import Meaning from "./Meaning";
 import Photos from "./Photos";
 
@@ -9,16 +9,16 @@ export default function Results(props) {
   if (props.results) {
     return (
       <div className="Results">
-        <section>
+        {/* <section>
           <h2 class="text-capitalize">{props.results.word}</h2>
           {props.phonetics.data.map(function(phonetics, index) {
             return (
-              <section key={index}>
-                <Phonetics phonetics={phonetics} />
-              </section>
+              // <section key={index}>
+              //   <Phonetics phonetics={phonetics} />
+              // </section>
             );
           })}
-        </section>
+        </section> */}
 
         <Photos photos={props.photos} />
 

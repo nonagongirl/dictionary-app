@@ -10,7 +10,7 @@ function App() {
         <h1>Dick-Van-Dyke-tionary</h1>
       </header>
       <main>
-        <Dictionary defaultKeyword="search" />
+        <Dictionary defaultKeyword="find" />
       </main>
       <footer className="footer">
         <a
