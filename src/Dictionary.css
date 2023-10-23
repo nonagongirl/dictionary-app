@@ -23,15 +23,15 @@
 }
 
 .dictionary .hint {
-  color: black;
+  color: rgb(0, 0, 0);
+  opacity: 0.6;
   font-size: 10px;
-  opacity: 60%;
 }
 
 .dictionary .prompt {
-  color: black;
+  color: rgb(0, 0, 0);
+  opacity: 0.8;
   font-size: 14px;
-  opacity: 80%;
   padding: 4px;
 }
 

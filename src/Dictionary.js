@@ -20,7 +20,13 @@ export default function Dictionary(props) {
   }
 
   function handlePhoneticsResponse(response) {
-    setPhonetics(response.data);
+    let phonetics = response.data.find((item) =>
+      item.phonetics.some((phonetic) => phonetic.audio !== null)
+    );
+
+    setPhonetics([
+      phonetics.phonetics.filter((item) => item.audio !== null)[0],
+    ]);
   }
 
   function handlePexelsResponse(response) {
