@@ -21,7 +21,6 @@ export default function Results(props) {
         </section>
 
         <Photos photos={props.photos} />
-
         {props.results.meanings.map(function(meanings, index) {
           return (
             <section key={index}>
